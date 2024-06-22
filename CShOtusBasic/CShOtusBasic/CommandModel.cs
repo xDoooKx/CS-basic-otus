@@ -12,8 +12,7 @@ namespace CShOtusBasic
 {
     public class CommandModel
     {
-        private static string? lastCommand;
-        private List<Commands> commandList;
+        private static string? lastCommand;        
 
         
         public static List<Commands> AvailableCommands { get; private set; } = new List<Commands>();
