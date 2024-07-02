@@ -5,7 +5,13 @@ namespace CShOtusBasic
     {
         static void Main(string[] args)
         {
-            AppState.AppInit();            
+            AppState.AppInit();
+
+            ListWorker worker = new ListWorker();
+
+            worker.WorkWithLists();
+
+            AppState.CloseApp();
         }
     }
 }
