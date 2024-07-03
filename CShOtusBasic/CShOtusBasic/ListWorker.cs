@@ -20,10 +20,6 @@ namespace CShOtusBasic
         
         public void WorkWithLists()
         {            
-            Stopwatch sw = new Stopwatch();
-
-
-
             Console.WriteLine();
             Console.WriteLine();
             Console.Write("Укажи количество элементов в каждом массиве (оставь пустым, чтобы было 1млн.): ");
@@ -31,7 +27,6 @@ namespace CShOtusBasic
 
             if (!CheckUserCommandForInt(getCommand, true)) return;
             FillTheArrays(getCommand);
-
 
 
             Console.WriteLine();
@@ -99,44 +94,46 @@ namespace CShOtusBasic
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == int.Parse(getCommand))
-                {
-                    sw.Stop();
-                    Console.WriteLine("Поиск по массиву list занял: " + sw);
-                    sw.Reset();
+                {                    
+                    Console.WriteLine("Поиск по массиву list занял: " + sw);                    
 
                     break;
                 }
             }
+            sw.Stop();
+            sw.Reset();
 
             sw.Start();
             for (int i = 0; i < listArray.Count; i++)
             {
                 if (i == int.Parse(getCommand))
-                {
-                    sw.Stop();
-                    Console.WriteLine("Поиск по массиву listArray занял: " + sw);
-                    sw.Reset();
+                {                    
+                    Console.WriteLine("Поиск по массиву listArray занял: " + sw);                    
 
                     break;
                 }
             }
+            sw.Stop();
+            sw.Reset();
 
             sw.Start();
             for (int i = 0; i < listLinked.Count; i++)
             {
                 if (i == int.Parse(getCommand))
-                {
-                    sw.Stop();
-                    Console.WriteLine("Поиск по массиву listLinked занял: " + sw);
-                    sw.Reset();
+                {                    
+                    Console.WriteLine("Поиск по массиву listLinked занял: " + sw);                    
 
                     break;
                 }
             }
+            sw.Stop();
+            sw.Reset();
         }
 
         private void DivWithoutRem(string getCommand)
         {
+            int _delimer = int.Parse(getCommand);
+
             Stopwatch sw = new Stopwatch();            
 
             StringBuilder sbArrayData = new StringBuilder();
@@ -148,7 +145,7 @@ namespace CShOtusBasic
             sw.Start();
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i] % int.Parse(getCommand) == 0)
+                if (list[i] % _delimer == 0)
                 {
                     sbArrayData.Append($"{list[i]},");
                     arrayDataCounter++;
@@ -169,7 +166,7 @@ namespace CShOtusBasic
             sw.Start();
             for (int i = 0; i < listArray.Count; i++)
             {
-                if ((int)listArray[i] % int.Parse(getCommand) == 0)
+                if ((int)listArray[i] % _delimer == 0)
                 {
                     sbArrayData.Append($"{list[i]},");
                     arrayDataCounter++;
@@ -190,7 +187,7 @@ namespace CShOtusBasic
             sw.Start();
             foreach (var item in listLinked)
             {
-                if (item % int.Parse(getCommand) == 0)
+                if (item % _delimer == 0)
                 {
                     sbArrayData.Append($"{item},");
                     arrayDataCounter++;
@@ -212,7 +209,7 @@ namespace CShOtusBasic
             sw.Start();
             for (LinkedListNode<int> node = listLinked.First; node != null; node = node.Next)
             {
-                if (node.Value % int.Parse(getCommand) == 0)
+                if (node.Value % _delimer == 0)
                 {
                     sbArrayData.Append($"{node.Value},");
                     arrayDataCounter++;
