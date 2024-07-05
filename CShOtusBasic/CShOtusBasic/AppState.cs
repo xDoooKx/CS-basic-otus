@@ -1,4 +1,5 @@
 ﻿
+
 namespace CShOtusBasic
 {
     public class AppState
@@ -16,7 +17,13 @@ namespace CShOtusBasic
             Console.WriteLine();
         }
 
-        public static void CloseApp()
+        public static void ChangeAppState()
+        {
+            IsAppRunning = false;
+            CloseApp();
+        }
+
+        private static void CloseApp()
         {
             Console.WriteLine();
             Console.WriteLine(separator);
@@ -24,7 +31,7 @@ namespace CShOtusBasic
             Console.WriteLine(separator);
             Console.WriteLine();
 
-            IsAppRunning = false;
+            Environment.Exit(0);
         }
     }
 }
