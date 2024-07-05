@@ -82,18 +82,18 @@ namespace CShOtusBasic
 
                 myEx.FormatData(myEx.Message, ExceptionHandler.Severity.Warning, myEx.Data);
             }
-
-            Console.WriteLine();
-            var _res = QEM.GetResults();
-            Console.WriteLine(_res);
+            else
+            {
+                Console.WriteLine();
+                var _res = QEM.GetResults();
+                Console.WriteLine(_res);                
+            }
 
             Console.WriteLine();
             Console.WriteLine("Нажми enter, чтобы продлжить, или 2 - для выхода");
             Console.Write("> ");
 
             if (Console.ReadLine() == "2") AppState.ChangeAppState();
-
-
         }
 
         private void EnterTheData(int pointer)

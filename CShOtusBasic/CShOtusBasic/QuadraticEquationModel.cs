@@ -28,7 +28,7 @@ namespace CShOtusBasic
                 b = int.Parse(this.inputedB);
                 c = int.Parse(this.inputedC);
             }
-            catch (OverflowException ex)
+            catch (OverflowException)
             {
                 ExceptionHandler myEx = new ExceptionHandler("Значение выходит за границы допустимого Int32!");
 
