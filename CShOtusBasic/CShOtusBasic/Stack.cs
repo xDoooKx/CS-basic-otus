@@ -72,7 +72,6 @@ namespace CShOtusBasic
         }
 
 
-
         private class StackItem
         {
             public int Pointer { get; set; } = -1;
